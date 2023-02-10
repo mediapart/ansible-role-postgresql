@@ -44,6 +44,11 @@ The directories (usually one, but can be multiple) where PostgreSQL's socket wil
 
 Control the state of the postgresql service and whether it should start at boot time.
 
+    postgresql_log_dir_group: "{{ postgresql_group }}"
+    postgresql_log_dir_mode: 0700
+
+Group and permissions of the `log_directory` defined in `postgresql_global_config_options`.
+
     postgresql_global_config_options:
       - option: unix_socket_directories
         value: '{{ postgresql_unix_socket_directories | join(",") }}'
