@@ -19,6 +19,10 @@ postgresql_unix_socket_directories:
 postgresql_service_state: started
 postgresql_service_enabled: true
 
+# Group and permissions of the `log_directory` defined in `postgresql_global_config_options`
+postgresql_log_dir_group: "{{ postgresql_group }}"
+postgresql_log_dir_mode: 0700
+
 # Global configuration options that will be set in postgresql.conf.
 postgresql_global_config_options:
   - option: unix_socket_directories
